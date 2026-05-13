@@ -1,3 +1,6 @@
+import PredictionCard from "@/components/PredictionCard";
+
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-zinc-950 px-6 py-16 text-white">
@@ -21,7 +24,7 @@ export default function Home() {
       
       </section>
 
-      <section className="max-w-3xl mb-6 mt-10 rounded-2xl bg-zinc-900 p-6 shadow-lg">
+      <section className="mt-10 mb-6 max-w-3xl rounded-2xl bg-zinc-900 p-6 shadow-lg">
         <h2 className="mb-6 text-2xl font-semibold text-orange-400">Future Features</h2>
         <p className="mb-4 text-base leading-relaxed"> Here is a list of features that will be added in the future:</p>
         <ul className="mb-4 ml-6 list-disc text-base leading-relaxed text-zinc-300">
@@ -30,55 +33,12 @@ export default function Home() {
           <li>Visualisations</li>
         </ul>
       </section>
-      
-      <section className="max-w-3xl rounded-2xl bg-zinc-900 p-6 shadow-lg">
-        <h2 className="mb-6 text-2xl font-semibold text-orange-400">
-          Mock Finals Prediction
-        </h2>
 
-        <p className="mb-6 text-base leading-relaxed text-zinc-300">
-          This is a mock prediction for the 2026 NBA Finals, showcasing how the final prediction will be displayed once the model is fully implemented.
-        </p>
-
-        <div className="mb-4 rounded-xl bg-zinc-800 p-4">
-          <p className="text-sm uppercase tracking-wide text-zinc-400">
-            Matchup 
-          </p>
-          <p className="mt-2 text-xl font-semibold text-white">
-            Boston Celtics vs. New York Knicks
-          </p>
-        </div>
-
-        <div className="mb-4 rounded-xl bg-zinc-800 p-4">
-          <p className="text-sm uppercase tracking-wide text-zinc-400">
-            Predicted Winner
-          </p>
-          <p className="mt-2 text-2xl font-bold text-orange-300">
-            New York Knicks
-          </p>
-        </div>
-
-        <div className="mb-4 rounded-xl bg-zinc-800 p-4">
-          <p className="text-sm uppercase tracking-wide text-zinc-400">
-            Win Probability
-          </p>
-          <p className="mt-2 text-2xl font-bold text-green-300">
-            68.79%
-          </p>
-        </div>
-
-        <div className="rounded-xl bg-zinc-800 p-4">
-          <p className="text-sm uppercase tracking-wide text-zinc-400">
-            Why the Model Likes This Team
-          </p>
-          <ul className="mt-3 ml-6 list-disc space-y-2 text-zinc-300">
-            <li>The New York Knicks have a large offensive output in the playoffs.</li>
-            <li>They have a good track record in playoff head-to-head matchups against the Boston Celtics.</li>
-            <li>Boston Celtics are struggling with injuries this season.</li>
-          </ul>
-        </div>
-      </section>
-
+      <PredictionCard 
+      matchup="Boston Celtics vs. New York Knicks"
+      winner="New York Knicks"
+      probability={68.79}         
+      />
     </main>
   );
 }
